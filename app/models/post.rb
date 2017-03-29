@@ -3,4 +3,6 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
   has_many :images, as: :imageable
+
+  scope :published, -> { where('published_at IS NOT NULL') }
 end
