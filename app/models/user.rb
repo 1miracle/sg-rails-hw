@@ -3,4 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :images, as: :imageable
+
+  validates :email, :username, uniqueness: true, presence: true
+  validates :password, length: { minimum: 8 }, presence: true
 end
