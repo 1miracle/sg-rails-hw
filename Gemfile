@@ -1,0 +1,16 @@
+source 'https://rubygems.org'
+
+gem 'mysql2', '0.3.21'
+gem 'rails', '3.2.22.5'
+
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+group :development, :test do
+  gem 'test-unit', '~> 3.0'
+end
+
+gem 'jquery-rails'
