@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :email, :username, uniqueness: true, presence: true
   validates :password, length: { minimum: 8 }, presence: true
 
-  scope :adult, -> { where('year(birthday) < 1999') }
+  scope :adults, -> { where('birthday <= ?', 18.years.ago) }
 
   def full_name
     "#{first_name} #{last_name}"
