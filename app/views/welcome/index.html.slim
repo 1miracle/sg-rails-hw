@@ -1,0 +1,11 @@
+#user_nav
+  - if current_user
+    p Hello, #{current_user.full_name}
+    = link_to "Log out", log_out_path
+  - else
+    = render 'sessions/form'
+    p Don't have an account?
+    = link_to 'Create new account', sign_up_path
+
+- flash.each do |name, msg|
+  = content_tag :div, msg, :id => "flash_#{name}"
