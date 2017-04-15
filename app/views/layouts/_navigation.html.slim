@@ -1,0 +1,17 @@
+.navbar.navbar-default.navbar-fixed-top
+  .navbar-inner
+    .container
+      .navbar-header
+        .navbar-brand Blog
+      ul.nav.navbar-nav.navbar-left
+        li.active
+          = link_to 'Home', root_path, data: { no_turbolink: true }
+      ul.nav.navbar-nav.navbar-right
+        - if current_user
+          li.title
+            = link_to current_user.full_name
+          li.hideable
+            = link_to 'Sign out', log_out_path
+        - else
+          li = link_to 'Sign up', sign_up_path
+          li = link_to 'Sign in', log_in_path

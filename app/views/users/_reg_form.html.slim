@@ -1,34 +1,30 @@
-= form_for @user do |f|
-  - if @user.errors.any?
-    .error_messages">
-      h2 Form is invalid
-      ul
-        - for message in @user.errors.full_messages
-          li= message
-
-  p
-    = f.label :first_name
-    br/
-    = f.text_field :first_name
-  p
-    = f.label :last_name
-    br/
-    = f.text_field :last_name
-  p
-    = f.label :username
-    br/
-    = f.text_field :username
-  p
-    = f.label :email
-    br/
-    = f.text_field :email
-  p
-    = f.label :password
-    br/
-    = f.password_field :password
-  p
-    = f.label :password_confirmation
-    br/
-    = f.password_field :password_confirmation
-
-  p.button = f.submit
+.container
+  h2 Registration
+  .container-fluid.jumbotron
+    = form_for @user do |f|
+      form role="form"
+        - if @user.errors.any?
+          .error_messages
+            - for message in @user.errors.full_messages
+              .alert.alert-danger
+                  = message
+        .form-group
+          = f.label :first_name
+          = f.text_field :first_name, class: "form-control"
+        .form-group
+          = f.label :last_name
+          = f.text_field :last_name, class: "form-control"
+        .form-group
+          = f.label :username
+          = f.text_field :username, class: "form-control"
+        .form-group
+          = f.label :email
+          = f.text_field :email, class: "form-control"
+        .form-group
+          = f.label :password
+          = f.password_field :password, class: "form-control"
+        .form-group
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, class: "form-control"
+        .actions
+          = f.submit 'Sign up', class: "btn btn-default"
