@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(".alert-info").alert();
+window.setTimeout(function() { $(".alert-info").fadeOut('slow'); }, 5000);
