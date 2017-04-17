@@ -1,0 +1,11 @@
+.panel.panel-default
+  .panel-body
+    h3
+      = post.title
+    p = post.created_at.strftime("%B %d, %Y")
+    - if post.user == current_user
+      p = link_to "Delete", post_path(post), method: :delete
+  .panel-footer
+    = post.body
+    br/
+    = link_to post.user.full_name
