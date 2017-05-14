@@ -4,5 +4,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :images, as: :imageable
 
+  self.per_page = 3
+
   scope :published, -> { where('published_at IS NOT NULL') }
 end

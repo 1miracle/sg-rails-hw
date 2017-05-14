@@ -5,6 +5,6 @@
       = f.text_field :title, class: "form-control"
     .form-group
       = f.label :body
-      = f.text_area :body, class: "form-control"
+      = f.text_area :body, class: "form-control", rows: 5
     .actions
-      = f.submit 'Create post', class: "btn btn-default"
+      = f.submit 'Create post', class: "btn btn-default", id: "add_post"

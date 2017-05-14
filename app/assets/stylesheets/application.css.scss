@@ -19,10 +19,14 @@
   margin-left: 5%;
 }
 
+body {
+  background-color: #f3f3f3;
+}
+
 .panel-body {
-    padding: 0px;
-    margin-top: 5px;
-    margin-left: 15px;
+  padding: 0px;
+  margin-top: 5px;
+  margin-left: 15px;
 }
 
 .alert {
@@ -31,8 +35,8 @@
 }
 
 .container-fluid .jumbotron {
-    padding-right: 60px;
-    padding-left: 60px;
+  padding-right: 60px;
+  padding-left: 60px;
 }
 
  #posts {
